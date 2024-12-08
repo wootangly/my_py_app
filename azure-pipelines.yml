@@ -1,0 +1,15 @@
+trigger:
+- main  # Replace with your default branch if different
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@1
+  inputs:
+    versionSpec: '1.0'
+    addToPath: true
+
+- script: |
+    python myapp.py
+  displayName: 'Run Python myapp.py Script'
